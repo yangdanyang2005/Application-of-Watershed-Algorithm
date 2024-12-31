@@ -5,47 +5,57 @@
 本项目是武汉大学遥感信息工程学院学生在数字图像处理课程中完成的实习任务。通过实现和应用分水岭算法，我们深入研究了地物分割与识别及粘连细胞分割与计数的应用场景。我们的目标是探索并优化分水岭算法的效果，提高图像分割性能。
 
 ## 目录结构
-项目文件按照以下结构组织：
-.
-├── 20241223_dip_teamwork_watershed
-│   ├── 20241223_dip_teamwork_watershed.vcxproj
-│   ├── 20241223_dip_teamwork_watershed.vcxproj.filters
-│   ├── 20241223_dip_teamwork_watershed.vcxproj.user
-│   ├── cells.png
-│   ├── data                             # 中间数据文件夹
-│   │   ├── 3_gray_hist.png
-│   │   └── histogram_stats.txt
-│   ├── opencv_world450d.lib             # OpenCV 4.5版本 库文件
-│   ├── pic                              # 遥感影像文件夹（已进行灰度拉伸）
-│   │   ├── stretched_output_mss.tif
-│   │   └── stretched_output_pan.tif
-│   ├── res                              # 细胞分割与计数的结果图像
-│   │   ├── 01_original.png
-│   │   ├── 02_grayscale.png
-│   │   ├── 03_binary.png
-│   │   ├── 04_cleaned_binary.png
-│   │   ├── 05_smoothed_binary.png
-│   │   ├── 06_inverted_distance_transform.png
-│   │   ├── 07_watershed_lines.png
-│   │   ├── 08_watershed_result.png
-│   │   ├── 09_segmented_binary.png
-│   │   └── 10_numbered_cells.png
-│   ├── res_g                           # 地物分割与识别的结果图像
-│   │   ├── 1_original_scaled.png
-│   │   ├── 2_denoised.png
-│   │   ├── 3_thresholded.png
-│   │   ├── 4_gradient.png
-│   │   ├── 5_gradient_cleaned.png
-│   │   └── 6_colored.png
-│   ├── cell.cpp                        # 细胞分割与计数的程序
-│   ├── rs_img.cpp                      # 地物分割与识别的程序
-│   └── ...
-├── 20241223_dip_teamwork_watershed.sln
-├── README.md                           # 当前文件
-└── include                             # 包含 OpenCV 4.5版本 额外资源的文件夹
+项目文件按照以下结构组织：    
+```
+.    
+├── 20241223_dip_teamwork_watershed    
+│   ├── 20241223_dip_teamwork_watershed.vcxproj    
+│   ├── 20241223_dip_teamwork_watershed.vcxproj.filters    
+│   ├── 20241223_dip_teamwork_watershed.vcxproj.user    
+│   ├── cells.png    
+│   ├── data                             # 中间数据文件夹    
+│   │   ├── 3_gray_hist.png    
+│   │   └── histogram_stats.txt    
+│   ├── opencv_world450d.lib             # OpenCV 4.5版本 库文件    
+│   ├── pic                              # 遥感影像文件夹（已进行灰度拉伸）    
+│   │   ├── stretched_output_mss.tif    
+│   │   └── stretched_output_pan.tif    
+│   ├── res                              # 细胞分割与计数的结果图像    
+│   │   ├── 01_original.png    
+│   │   ├── 02_grayscale.png    
+│   │   ├── 03_binary.png    
+│   │   ├── 04_cleaned_binary.png    
+│   │   ├── 05_smoothed_binary.png    
+│   │   ├── 06_inverted_distance_transform.png    
+│   │   ├── 07_watershed_lines.png    
+│   │   ├── 08_watershed_result.png    
+│   │   ├── 09_segmented_binary.png    
+│   │   └── 10_numbered_cells.png    
+│   ├── res_g                           # 地物分割与识别的结果图像    
+│   │   ├── 1_original_scaled.png    
+│   │   ├── 2_denoised.png    
+│   │   ├── 3_thresholded.png    
+│   │   ├── 4_gradient.png    
+│   │   ├── 5_gradient_cleaned.png    
+│   │   └── 6_colored.png    
+│   ├── cell.cpp                        # 细胞分割与计数的程序    
+│   ├── rs_img.cpp                      # 地物分割与识别的程序    
+│   └── ...    
+├── 20241223_dip_teamwork_watershed.sln    
+├── README.md                           # 当前文件    
+├──  include                            # 包含 OpenCV 4.5版本 额外资源的文件夹    
+└── ... 
+```
 
+## 使用说明
+### 1. VS2022 下配置 OpenCV 4.5 编译环境
+ - 将include文件夹（自行下载时，在opencv/build目录中）拷贝至工程所在的目录下面**（本项目的文件结构已完成这一步）**
+ - 项目xxx(项目名) - 属性 - 配置属性 - C/C++ - 常规 - 附加包含目录，在右侧文本编辑窗口内，添加刚刚拷贝的include目录，即../include
+ - 将下发的动态链接库，即.dll文件（自行下载时，在opencv/build/x64/vc15/bin目录中）拷贝至与工程生成的可执行文件（exe）相同的目录中（本项目的文件结构已完成这一步）
+ - 将下发的lib文件（自行下载时，在opencv/build/x64/vc15/lib目录中）拷贝至与工程生成的源文件（xxx.cpp）相同的目录中（本项目的文件结构已完成这一步）
+ - 在解决方案资源管理器中，右键xxx项目-添加-现有项，选择前文提到的的lib文件
 
-## 运行方式
+### 2. 运行方式
 请分别运行地物分割与识别的程序 `rs_img.cpp` 和细胞分割与计数的程序 `cell.cpp`，并且在运行其中一个程序的时候，另一个程序需要全部注释掉。
 
 ## 致谢
