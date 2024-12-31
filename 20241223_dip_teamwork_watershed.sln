@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35201.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "20241223_dip_teamwork_watershed", "20241223_dip_teamwork_watershed\20241223_dip_teamwork_watershed.vcxproj", "{6F54655A-7F6A-47BE-B975-0339248E4A39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F54655A-7F6A-47BE-B975-0339248E4A39}.Debug|x64.ActiveCfg = Debug|x64
+		{6F54655A-7F6A-47BE-B975-0339248E4A39}.Debug|x64.Build.0 = Debug|x64
+		{6F54655A-7F6A-47BE-B975-0339248E4A39}.Debug|x86.ActiveCfg = Debug|Win32
+		{6F54655A-7F6A-47BE-B975-0339248E4A39}.Debug|x86.Build.0 = Debug|Win32
+		{6F54655A-7F6A-47BE-B975-0339248E4A39}.Release|x64.ActiveCfg = Release|x64
+		{6F54655A-7F6A-47BE-B975-0339248E4A39}.Release|x64.Build.0 = Release|x64
+		{6F54655A-7F6A-47BE-B975-0339248E4A39}.Release|x86.ActiveCfg = Release|Win32
+		{6F54655A-7F6A-47BE-B975-0339248E4A39}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD4B2643-8706-413D-BB1C-A519F4399FF6}
+	EndGlobalSection
+EndGlobal
