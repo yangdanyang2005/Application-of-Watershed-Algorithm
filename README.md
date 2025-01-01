@@ -77,4 +77,4 @@
 
 ## 联系方式
 如果您对本项目有任何疑问或建议，欢迎通过以下方式联系我们：
- - 组长邮箱：<EMAIL>yangdanyang@whu.edu.com
+ - 组长邮箱：<EMAIL>yangdanyang@whu.edu.cn
